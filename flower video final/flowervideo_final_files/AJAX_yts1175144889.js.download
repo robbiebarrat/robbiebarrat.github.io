@@ -1,0 +1,245 @@
+var _____WB$wombat$assign$function_____ = function(name) {return (self._wb_wombat && self._wb_wombat.local_init && self._wb_wombat.local_init(name)) || self[name]; };
+if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; return this; } }
+{
+  let window = _____WB$wombat$assign$function_____("window");
+  let self = _____WB$wombat$assign$function_____("self");
+  let document = _____WB$wombat$assign$function_____("document");
+  let location = _____WB$wombat$assign$function_____("location");
+  let top = _____WB$wombat$assign$function_____("top");
+  let parent = _____WB$wombat$assign$function_____("parent");
+  let frames = _____WB$wombat$assign$function_____("frames");
+  let opener = _____WB$wombat$assign$function_____("opener");
+
+
+function getXmlHttpRequest()
+{
+	var httpRequest = null;
+	try
+	{
+		httpRequest = new ActiveXObject("Msxml2.XMLHTTP");
+	}
+	catch (e)
+	{
+		try
+		{
+			httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		catch (e)
+		{
+			httpRequest = null;
+		}
+	}
+	if (!httpRequest && typeof XMLHttpRequest != "undefined")
+	{
+		httpRequest = new XMLHttpRequest();
+	}
+	return httpRequest;
+}
+
+function getUrlSync(url)
+{
+	return getUrl(url, false, null);
+}
+
+function getUrlAsync(url, handleStateChange)
+{
+	return getUrl(url, true, handleStateChange);
+}
+
+// call a url
+function getUrl(url, async, handleStateChange) {
+	var xmlHttpReq = getXmlHttpRequest();
+
+	if (!xmlHttpReq)
+		return;
+
+	if (handleStateChange)
+	{
+		xmlHttpReq.onreadystatechange = function()
+			{
+				handleStateChange(xmlHttpReq);
+			};
+	}
+	else
+	{
+		xmlHttpReq.onreadystatechange = function() {;}
+	}
+
+	xmlHttpReq.open("GET", url, async);
+	xmlHttpReq.send(null);
+}
+
+function postUrl(url, data, async, stateChangeCallback)
+{ 
+	var xmlHttpReq = getXmlHttpRequest(); 
+
+	if (!xmlHttpReq)
+		return;
+
+	xmlHttpReq.open("POST", url, async);
+	xmlHttpReq.onreadystatechange = function()
+		{
+			stateChangeCallback(xmlHttpReq);
+		};
+	xmlHttpReq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	xmlHttpReq.send(data);
+	//alert ('url: ' + url + '\ndata: ' + data);
+}
+
+function urlEncodeDict(dict)
+{ 
+	var result = "";
+	for (var i=0; i<dict.length; i++) {
+		result += "&" + encodeURIComponent(dict[i].name) + "=" + encodeURIComponent(dict[i].value);
+	}
+	return result;
+}
+
+function execOnSuccess(stateChangeCallback)
+{
+	return function(xmlHttpReq)
+		{
+			if (xmlHttpReq.readyState == 4 &&
+					xmlHttpReq.status == 200)
+				stateChangeCallback(xmlHttpReq);
+			//alert(xmlHttpReq + " " + xmlHttpReq.readyState + " " + xmlHttpReq.status);
+		};
+}
+
+
+function postFormByForm(form, async, successCallback) {
+	var formVars = new Array();
+	for (var i = 0; i < form.elements.length; i++)
+	{
+		var formElement = form.elements[i];
+		
+		// Special handling for checkboxes (we need an array of selected checkboxes..)!
+		if(formElement.type=='checkbox' && !formElement.checked) {
+			continue;
+		} 
+		var v=new Object;
+		v.name=formElement.name;
+		v.value=formElement.value;
+		formVars.push(v);		
+	} 
+	postUrl(form.action, urlEncodeDict(formVars), async, execOnSuccess(successCallback));
+}
+
+function postForm(formName, async, successCallback)
+{
+	// postFormByName
+	var form = document.forms[formName];
+	return postFormByForm(form, async, successCallback);
+}
+
+function replaceDivContents(xmlHttpRequest, dstDivId)
+{
+	var dstDiv = document.getElementById(dstDivId);
+	dstDiv.innerHTML = xmlHttpRequest.responseText;
+}
+
+
+function getUrlXMLResponseCallback(xmlHttpReq) {
+	if(xmlHttpReq.responseXML == null) {
+		alert("Error while processing your request.");
+		return;
+	}
+	var root_node = getRootNode(xmlHttpReq);
+	var return_code = getNodeValue(root_node, 'return_code');
+	//alert("return code " + return_code);
+
+	if(return_code == 0) {
+		redirect_val = getNodeValue(root_node, 'redirect_on_success');
+		if(redirect_val != null) {
+			window.location=redirect_val;
+		} else {
+			success_message = getNodeValue(root_node, 'success_message');
+			if (success_message != null) {
+				alert(success_message);
+			}
+			if(this.successCallback != null) {
+				this.successCallback(xmlHttpReq);
+			}
+		}
+	} else {
+		var error_msg = getNodeValue(root_node, 'error_message');
+		if (error_msg == null || error_msg.length == 0) {
+			error_msg = "An error occured while performing this operation.";
+		}
+		alert(error_msg)
+	}
+}
+
+function getUrlXMLResponseCallbackFillDiv(xmlHttpReq) {
+	getUrlXMLResponseCallback(xmlHttpReq);
+	document.getElementById(this.div_id).innerHTML=getNodeValue(xmlHttpReq.responseXML, "html_content");
+}
+
+function getNodeValue(obj,tag)
+{
+	node=obj.getElementsByTagName(tag);
+	if(node!=null && node.length>0) {
+		return node[0].firstChild.nodeValue;
+	} else {
+		return null;
+	}
+}
+
+function getRootNode(xmlHttpReq) {
+	return xmlHttpReq.responseXML.getElementsByTagName('root')[0];
+}
+
+function getUrlXMLResponse(url, successCallback) {
+	this.successCallback = successCallback;
+	this.urlResponseCallback = getUrlXMLResponseCallback;
+	getUrl(url, true, execOnSuccess(this.urlResponseCallback)) 
+}
+
+function getUrlXMLResponseAndFillDiv(url, div_id, successCallback) {
+	this.successCallback = successCallback;
+	this.urlResponseCallback = getUrlXMLResponseCallbackFillDiv;
+	this.div_id = div_id;
+	getUrl(url, true, execOnSuccess(this.urlResponseCallback)) 
+	return "testing";
+}
+
+function postUrlXMLResponse(url, data, successCallback) {
+	this.successCallback = successCallback;
+	this.urlResponseCallback = getUrlXMLResponseCallback;
+	postUrl(url, data, true, execOnSuccess(this.urlResponseCallback))
+}
+// ANGUS - This appears to be unused...
+function confirmAndPostUrlXMLResponse(url, confirmMessage, data, successCallback) {
+	if (confirm(confirmMessage)) {
+		postUrlXMLResponse(url, data, successCallback);
+	}
+}
+
+function postFormXMLResponse(formName, successCallback) {
+	this.successCallback = successCallback;
+	postForm(formName, true, execOnSuccess(getUrlXMLResponseCallback))
+}
+
+
+}
+/*
+     FILE ARCHIVED ON 12:36:05 May 02, 2007 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 19:23:48 Oct 22, 2022.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 594.958
+  exclusion.robots: 0.093
+  exclusion.robots.policy: 0.086
+  RedisCDXSource: 167.721
+  esindex: 0.005
+  LoadShardBlock: 118.19 (3)
+  PetaboxLoader3.datanode: 110.022 (4)
+  CDXLines.iter: 22.135 (3)
+  load_resource: 138.446
+  PetaboxLoader3.resolve: 101.359
+*/

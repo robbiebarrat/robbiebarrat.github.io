@@ -1,0 +1,99 @@
+var _____WB$wombat$assign$function_____ = function(name) {return (self._wb_wombat && self._wb_wombat.local_init && self._wb_wombat.local_init(name)) || self[name]; };
+if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; return this; } }
+{
+  let window = _____WB$wombat$assign$function_____("window");
+  let self = _____WB$wombat$assign$function_____("self");
+  let document = _____WB$wombat$assign$function_____("document");
+  let location = _____WB$wombat$assign$function_____("location");
+  let top = _____WB$wombat$assign$function_____("top");
+  let parent = _____WB$wombat$assign$function_____("parent");
+  let frames = _____WB$wombat$assign$function_____("frames");
+  let opener = _____WB$wombat$assign$function_____("opener");
+
+// The following functions rely on javascript found in templates/includes/_comments2.tmpl
+
+function approveComment(comment_id, comment_type, entity_id)
+{
+	if (CheckLogin() == false)
+		return false;
+	
+	//if(!confirm("Really approve this comment?"))
+	//	return true;
+	
+	//postFormByForm(form, true, execOnSuccess(commentApproved));
+	//postUrl("/comment_servlet",  urlEncodeDict(formVars), true, execOnSuccess(commentApproved));
+	
+	postUrlXMLResponse("/comment_servlet", "&field_approve_comment&comment_id=" + comment_id + "&comment_type=" + comment_type + "&entity_id=" + entity_id, self.commentApproved);
+
+	return false;
+}
+	
+
+
+function commentApproved(xmlHttpRequest)
+{
+	alert("Comment approved.")
+}
+
+
+function removeComment(div_id, deleter_user_id, comment_id, comment_type, entity_id)
+{
+	self.div_id = div_id
+	self.commentRemoved = commentRemoved
+	if (CheckLogin() == false)
+		return;
+
+	//if (!confirm("Really remove comment?"))
+	//	return;
+	
+	postUrlXMLResponse("/comment_servlet", "deleter_user_id=" + deleter_user_id + "&remove_comment&comment_id=" + comment_id + "&comment_type=" + comment_type + "&entity_id=" + entity_id, self.commentRemoved);
+
+	return false;
+}
+function commentRemoved(xmlHttpRequest)
+{
+	toggleVisibility(self.div_id, false);
+	return;
+}
+		
+function hideCommentReplyForm(form_id) {
+	var div_id = "div_" + form_id;
+	var reply_id = "reply_" + form_id;
+	toggleVisibility(reply_id, true);
+	toggleVisibility(div_id, false);
+	//setInnerHTML(div_id, "");
+}
+
+function handleStateChange(xmlHttpReq) {
+	document.getElementById("all_comments_content").innerHTML=getNodeValue(xmlHttpReq.responseXML, "html_content");
+	
+	style2 = document.getElementById("recent_comments").style;
+	style2.display = "none";
+	
+	var style2 = document.getElementById("all_comments").style;
+	style2.display = "";
+}
+
+
+}
+/*
+     FILE ARCHIVED ON 12:36:17 May 02, 2007 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 19:23:49 Oct 22, 2022.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 171.414
+  exclusion.robots: 0.14
+  exclusion.robots.policy: 0.13
+  RedisCDXSource: 1.89
+  esindex: 0.008
+  LoadShardBlock: 144.099 (3)
+  PetaboxLoader3.datanode: 231.587 (4)
+  CDXLines.iter: 12.844 (3)
+  load_resource: 239.084
+  PetaboxLoader3.resolve: 124.241
+*/
