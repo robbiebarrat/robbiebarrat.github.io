@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,10 +80,6 @@
       justify-content: flex-start;
     }
 
-    .rest-text {
-
-      }
-
     .rest-top {
       display: block;
       margin-left: auto; /* Aligns rest_top.png to the right edge of rest_bottom.png */
@@ -95,79 +92,854 @@
 
 
 }
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; 
+}
+
+.column {
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+/* widths */
+.three-wide {
+    width: 33.33%;
+}
+
+.four-wide {
+    width: 25%;
+}
+
+.two-wide {
+    width: 50%;
+}
+
+.one-wide {
+    width: 100%;
+}
+
+.twothirds-wide {
+    width: 65%;
+}
+
+
+<!-- dev section -->
+
+    
+    .generation-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px; /* Space between images */
+      justify-content: flex-start;
+      align-items: flex-start; /* Ensure all images align at the top */
+      box-sizing: border-box;
+      width: 100%; /* Make sure the gallery can span the full width */
+      margin: 0;
+      padding: 0;
+    }
+
+    .generation-gallery a {
+      flex: 0 0 calc(33.33% - 2px);
+      box-sizing: border-box;
+      max-width: 350px;
+      text-decoration: none;
+    }
+
+    .generation-gallery img {
+      width: 100%;
+      max-width: 640px;
+
+      height: auto;
+      display: block;
+      image-rendering: pixelated;
+    }
+
+<!-- wrapping img section -->
+
+.wrap-container {
+            width: 100%;
+            display: flow-root; /* Clears the float automatically */
+        }
+
+        .rest-transparent-img {
+            float: right;
+            width: 100%; /* Takes up two-thirds of the screen width */
+            height: auto;
+            
+            /* Apply the shape contour wrapping */
+            shape-outside: url('rest_shape.png');
+            shape-image-threshold: 0.5;
+            shape-margin: 0px; /* Space between text and the image shape contours */
+            
+            margin-left: 0px; /* Normal box margin fallback */
+        }
+        
+.rest-text {
+    margin: 0;
+    padding-top: 0;
+}
+
+<!-- i hate mobile phones. --> 
+
+/* Mobile-first fallback: spans full width on phones */
+.half-except-phone {
+    width: 100%;
+}
+
+/* Mobile-first fallback: spans full width on phones */
+.twothirds-except-phone {
+    width: 100%;
+}
+
+.80-except-phone {
+    width: 100%;
+}
+
+
+/* Desktop override: drops to 50% width on larger screens */
+@media (min-width: 768px) {
+    .half-except-phone {
+        width: 50%;
+    }
+    .twothirds-except-phone {
+    width: 66.66%;
+	}
+	.rest-transparent-img {
+        float: right;
+        width: 66.66%;
+        shape-outside: url('rest_shape.png');
+        shape-image-threshold: 0.5;
+        shape-margin: 0px;
+        margin-left: 0px;
+    }
+	.rest-text {
+        /* 1. Reset standard margin */
+        margin: 0; 
+        
+        padding-top: calc(66.66vw * 0.33); 
+    }
+    .eighty-except-phone {
+    width: 80%;
+    align: right;
+	}
+}
+
     </style>
 </head>
 <body>
 
     <div class="header">
 <a href="../index.html">&larr; Return to the index page</a>
-        <div class="nav">
-			Project Overview</a> | 
-
-            <a href="theo.html">Project Aim</a> | 
-            <a href="dev/development.html">What does <i>"Big Buck Hunter: Restoration"</i> change from the original game, and why?</a> | 
-            <a href="vids/videos.html">Wild Deer Photographs + Videos</a> | 
-            <a href="cabphoto/cabphoto.html">Photographs of the modified arcade cabinet</a> | 
-            <a href="next.html">Next Steps + Exhibition History</a> | 
-            <a href="reading.html">Other Reading</a> |
-            <a href="thankyou.html">"Thank you"s</a>
-
-        </div>
-    </div>
-
+</div>
     <div class="content">
         <h1>Big Buck Hunter: Restoration</h1>
         
         What is Big Buck Hunter?
-        <p>“Big Buck Hunter” is a hunting arcade game released in 2000. The player uses a lightgun - a plastic shotgun with a light sensor in the barrel - to interact with the game, aiming directly at the screen of the arcade cabinet. The player’s goal is shooting and killing bucks (male deer), while avoiding does (female deer, without antlers). The entire gameplay consists of shooting deer, or other animals on bonus rounds, across a fixed number of levels in an outdoor/forest setting. Big Buck Hunter was notably popular - even saving the developers/publishers, “Incredible Technologies”, from bankruptcy at the time. Over time, with multiple releases, it has evolved into almost an entirely different game than it was in 2000. While newer versions of Big Buck Hunter continue to be popular and culturally relevant today, for this project the only version of Big Buck Hunter that is relevant is the first release from 2000.</p>
+        <p>“Big Buck Hunter” is a hunting arcade game released in 2000 by incredible technologies. 
+        The player uses a lightgun - a plastic shotgun with a light sensor in the barrel - 
+        and aims it directly at the screen. The goal of the game is to shoot and kill bucks (male deer), while avoiding does 
+        (female deer, without antlers). The entire gameplay consists of shooting deer, and on bonus rounds you shoot other types
+         of animals. The gameplay is spread across a fixed number of levels in an outdoor/forest setting.
+         Big Buck Hunter was notably popular - even saving the developer and publisher from bankruptcy at the time.
+          Over time, with multiple releases, it has evolved into almost an entirely
+           different game than it was in 2000. While newer versions of Big Buck Hunter (e.g. Big Buck Hunter: Pro) continue to be popular and 
+           culturally relevant today, for this project the only version of Big Buck Hunter that is relevant is the first
+            release from 2000.</p>
 		<br>
-		<img src="nighttime_title2.png">
+		<div class="row">
 	
+		<div class="column twothirds-except-phone">
+		<img src="nighttime_title2.png" width=100%>
 
-		<p>Big Buck Hunter is a strikingly beautiful game - at least visually. Unlike most arcade games that set themselves in a fantasy world or exaggerated reality, Big Buck Hunter tries to depict the natural world; which gives it the unique potential to glorify creation. However, in an unmodified state it is incurably plagued by violence, the deer only have programmed behavior related to fear or death, and the landscapes in the game are designed carefully to create a ‘shooting challenge’ for the player. In this state, instead of reflecting the full beauty of nature the game reveals our broken relationship with it. The purpose of this project, “Big Buck Hunter: Restoration,” is not to create a new game, but to modify and restore Big Buck Hunter and the game-world inside of it to a pre-fall state, free of violence and death, reflecting the original and ultimate aim of creation: a world of harmony, peace, and communion.</p>
+		</div>
+		</div>
+	
+	
+		<p>Visually, Big Buck Hunter is a strikingly beautiful game.
+		 Unlike most arcade games before 2000 that set themselves in a fantasy world or exaggerated reality,
+		  Big Buck Hunter tries to depict the natural world as faithfully as possible; every level has a photorealistic background, 
+		  usually of American forest or plains. 
+		  However, in an unmodified state, every aspect of the game is built around violence.
+		    The deer only have programmed behavior related to fear or death, and the landscapes
+		     in the game are designed carefully to create a ‘shooting challenge’ for the player.
+		      In this state, instead of reflecting the full beauty of nature, the game is based
+		       on our broken relationship with it. The purpose of this project, “Big Buck Hunter: Restoration,”
+		        is not to create a new game, but to modify and restore Big Buck Hunter and the game-world
+		         inside of it to a pre-fall state (the garden of Eden and the rest of the world before the fall of man),
+		          free of violence and death, reflecting the original and ultimate aim of creation: harmony, peace, and communion.</p>
 		<br>
-		<div class="rest-container">
-    <div class="rest-text-and-image">
-		<p class="rest-text"></p>
-The key differences from the original game and Big Buck Hunter: Restoration include endlessly <br>
-generating landscapes instead of a fixed amount of levels, evoking the eternal quality of life <br>
-before the fall. The deer now exhibit restful and peaceful behaviors to correspond with this, <br>
-and the deer, turkeys, pheasants, quail, and ducks who would never see each other in the<br>
-original game since birds are only present in bonus levels, now exist in the same landscapes<br>
-and can interact, restoring the unity of creation. Among these and other smaller changes and<br>
-removals, everything is achieved solely with the original game’s assets. New code is written,<br>
-and the modification runs on a different game-engine, but no additional 3D models, textures, <br>
-or audio assets are introduced—every texture, model, and sound present is painstakingly reverse<br>
- engineered from the original game’s hard drive.<br><br>
-</p>
+		<div class="wrap-container">
+            <img src="rest_shape.png" alt="Restoration Preview" class="rest-transparent-img">
+            <p class="rest-text">
+                The key differences from the original game and Big Buck Hunter: Restoration include endlessly 
+                generating landscapes instead of a fixed number of levels, corresponding to the eternal quality of life 
+                before the fall. The deer now exhibit restful and peaceful behaviors, and are now present in the same landscapes alongside
+                 turkeys, pheasants, quail, and ducks - who would never see each other in the 
+                original game since other animals are only present in bonus levels. The different types of animals can now interact with one another, to try and reflect the intended unity of the first-created world. 
+                <br><br>
+                To accomplish these changes and other smaller additions and removals, everything is achieved using 
+                <b>only the original game’s assets</b>. New code is written, but no additional 3D models, textures, 
+                or audio assets (aside from background music) are introduced or created - every texture, model, and sound present is painstakingly reverse 
+                engineered from the original game’s hard drive. This project only employs traditional generative processes and does not use any AI (neural networks, etc). Technically it would have been possible to do this project when Big Buck Hunter was originally released.
+            </p>
+        </div>
 
-  
-      <img src="rest_top.png" alt="Rest Top" class="rest-top">
-    </div>
-    <img src="rest_bottom.png" alt="Rest Bottom" class="rest-bottom">
-  </div>
+        <br>
 		<br>
-		<p>Big Buck Hunter: Restoration is realized by modifying the original arcade cabinet to run the new software. The piece is presented as the arcade machine itself; the physical appearance of the cabinet remains unchanged, and the gun, though now inoperative, is still present - to stress that it is not a new game, but a modification/restoration of the original title. It is roughly 76 inches high × 30 inches wide × 31 inches deep, and about 500 lbs. It is an edition of one, with two artist proofs.</p>
-
-				<img src="title_divider.png">
+		<br><br>
+		<div class="row" style="clear: both; padding-top: 0px;">
+			<div class="column three-wide">
+			<a href="./bbhr_cabinet_avant_galerie.jpg"><img src="./bbhr_cabinet_avant_galerie.jpg" width=100%></a>
+			Above: Big Buck Hunter: Restoration at <a href="https://avant-galerie.com/robbie-barrat-2021-2024">l'Avant Galerie Vossen in 2025</a>.
+		</div>
+		<div class="column twothirds-wide">
+				<p>Big Buck Hunter: Restoration is realized by modifying the original arcade cabinet to run the new software. The piece is presented as the arcade machine itself; the physical appearance of the cabinet remains unchanged, and the gun, though now inoperative, is still present - to stress that it is not a new game, but a modification/restoration of the original title. It is roughly 76 inches high × 30 inches wide × 31 inches deep, and about 500 lbs. It is an edition of one, with two artist proofs.</p>
+	
+		</div>
+		
+		
+		</div>
+<br>
+		<div class="row">
+		<div class="column one-wide">
+						<img src="title_divider.png" width=100%>
+		</div>
+				
+		</div>
 		  
 		<br>
-		<h2>Pages on this website:</h2>
-		<i>Recommended to read in this order</i>
-		<h3><li><a href="theo.html">Project Aim / Why bother to do this?</a></li></h3>
-		<h3><li><a href="dev/development.html">What does <i>"Big Buck Hunter: Restoration"</i> change from the original game, and why?</a></li></h3>
-		<h3><li><a href="vids/videos.html">Wild Deer Photographs + Videos</a></li></h3>
-		<h3><li><a href="cabphoto/cabphoto.html">Photographs of the modified arcade cabinet</a></li></h3>
-		<h3><li><a href="next.html">Next Steps + Exhibition History</a></li></h3>
-		<h3><li><a href="reading.html">Other Reading</a></li></h3>
-		<h3><li><a href="thankyou.html">"Thank you"s</a></li></h3>
+		<h2>Sections of this webpage (click to jump to a section):</h2>
+		<i>(Recommended to read in order by scrolling down though)</i>
+		<h3><li><a href="#aim">Project Aim / Personal Intent</a></li></h3>
+		<h3><li><a href="#dev">What does <i>"Big Buck Hunter: Restoration"</i> change from the original game, and why?</a></li></h3>
+		<h3><li><a href="#trailcam">Wild Deer Photographs + Videos</a></li></h3>
+		<h3><li><a href="#cabphoto">Photographs of the modified arcade cabinet</a></li></h3>
+		<h3><li><a href="#next">Next Steps + Exhibition History</a></li></h3>
+		<h3><li><a href="#reading">Other Reading</a></li></h3>
+		<h3><li><a href="#thankyou">"Thank you"s</a></li></h3>
 		<br><br>
-		<img src="nextfooter.png">
+		
+		
+		<div class="row">
+		<div class="column one-wide">
+		<img src="nextfooter.png" width=100%>
+
+		</div></div>
 
 
 
     </div>
+<hr>
+<!-- theo.html -->
+<div class="content">
+        <h1 id="aim">Project Aim / Personal Intent</h1>
 
 
-</body>
-</html>
+
+		<p>
+			The aim of this project from its conception is to 'restore' the world in Big Buck Hunter
+			 back to something like a pre-fall or Edenic state. This work is not the 
+			 creation of a new game or a 'peaceful sequel' to Big Buck Hunter, but the changes 
+			 described above place it as a modification of the original title. 
+			 I do not see it as a pacifist/vegan/gun-control statement piece, since in those 
+			 cases there would just be a removal of the shooting mechanics; while most of this project 
+			 is additive. The two largest components of this mod are the added animal behavior and the different
+			  generative systems used to produce landscapes. 
+			 
+		</p>
+		
+		<div class="row">
+		<div class="column twothirds-except-phone">
+		<img src="turkeyflourish.gif" width=100%>
+		</div>
+		</div>
+		
+		<p>
+		With a large portion of this project being landscape work with the idea of returning to a 
+		pre-fall state, the technical process is very closely connected with the idea of the 'replanting of the garden of Eden'
+		 - a metaphor used when discussing Christ's resurrection. It is no coincidence that Mary Magdalene,
+		  the first to see the risen Christ, initially mistook Him for a gardener. On this connection, G.K.
+		   Chesterton writes:
+		</p>
+		<p>
+		<i>
+		“On the third day, the friends of Christ coming at day-break to the place found the grave empty 
+		and the stone rolled away. In varying ways they realized the new wonder; the world had died in 
+		the night. What they were looking at was the first day of a new creation, with a new heaven and 
+		a new earth; and in a semblance of a gardener God walked again in the garden, not in the cool of 
+		the evening, but in the dawn.”
+
+		</i>
+		</p>
+		<p>
+		This project seeks to mirror the restoration of creation, pointing toward the "eighth day"
+		 of creation; the day of the new creation begun by Christ's resurrection. It is an 
+		 attempt to depict a suffering world healed, transfigured, and brought back to God.
+		</p>
+
+		<p>
+		In this light, the project does not seek to recreate Eden as it was; it does not make sense to try to “go back to Eden” 
+		(God is in the present not the past), but to align the game with the future reality, after the general resurrection, 
+		that Eden points toward. Drawing on the first-created world as a model, Big Buck Hunter: Restoration is connected to 
+		the idea that "The Holy Fathers’ vision of the first-created world was at the same time a glimpse of the future age."
+		 The harmony and union with God of Eden, disrupted by the Fall, are not merely a lost past but a foretaste of the 
+		 redeemed and glorified creation in the age to come.
+</p>
+		
+
+		<div class="row">
+			
+		<div class="column half-except-phone">
+<img src="fencetryout2.gif" width=100% alt="'The Holy Fathers' Vision of the first-created world was at the same time a glimpse of the future age' - Quote from 'Genesis, Creation, and Early Man', by Fr. Seraphim Rose">
+				</div>
+
+		
+		<div class="column half-except-phone">
+
+
+		<p>
+		
+        <i>“So, icons are God-bearing pieces of creation, a creation made by God in the first place but somehow tainted, its spiritual quality made less obvious through the great tragedy we call the Fall. However, since God became man, this same material, through the work of the forester, the carpenter, the paint-maker, and eventually the icon painter, is returned to the fullness of its spiritual origins in a way most of the stuff that surrounds us is not."</i>
+        </p>
+		<p>
+		- Archimandrite Meletios Webber, “Bread & Water, Wine & Oil” p. 105
+		</p>
+		
+</p>
+		</div>
+		</div>
+
+		<p>
+		Icons are one of my life interests (see more about iconography of the Orthodox Church on <a href="../kroug.html">my page here</a>), they point towards the same thing; the transfiguration and restoration of creation. 
+	 I can't paint them yet since I am still waiting to be received into the Church.
+	 This project was, very roughly, a way for me to make work in line with icons without making an icon. Big Buck Hunter: Restoration cannot achieve the fullness of restoration that icons manifest, but the aim of this project is to reflect, however imperfectly, the beginnings of such restoration.
+		</p>
+<br>
+
+<div class="row" style="justify-content: flex-end;">
+<div class="column eighty-except-phone">
+	<img src="corn_full.gif" width=100%>
+
+</div>
+</div>
+<div class="column four-wide">
+</div>
+
+</div>
+
+    </div>
+    </div>
+
+<hr>
+<!-- dev/development.html -->
+
+
+
+
+<div class="content">
+        <h1 id="dev">Big Buck Hunter (2000) - Development and Nature of the Original Game</h1>
+        <p>
+			This section covers the characteristics of the original game, what exactly it contains,
+			 and reasoning/details of the major modifications made to it.
+		</p>
+		<h2>Section Contents (click to skip to a section):</h2>
+		<li><a href=#landscapes>Levels/landscapes in the original game</a></li>
+		<li><a href=#animals>Animals in the original game</a></li>
+		<br>
+		<a id="landscapes"></a>
+		<h2>Levels in the original game</h2>
+        <p>Big Buck Hunter features four distinct regions, the South, Midwest, Northeast, and the West.
+
+        </p>
+        <div class="row">
+        <div class="column half-except-phone">
+		<img src="./dev/regions.png" width=100% alt="Regions of the game">
+		</div>
+		<p> Each region is further divided into four groups corresponding to times of day - morning, noon,
+		 evening, and night. For each of these times of day, there are four levels that can be played.
+		  The player has to kill three bucks before they can advance to the next time of day, killing
+		   a maximum of one buck per level. If the player successfully finishes an entire day, from
+		    morning to night, the game displays a congratulatory message and requires more money to
+		     choose another region to play. The game is finished when all four regions are completed,
+		      and 48 bucks are killed.</p>
+		<p>Below are some of the levels from the original (unmodified) game, grouped by the regions.
+		 In the images below there is only one level shown for each time of day (top left is morning,
+		  top right is mid-day, bottom left is evening, and bottom right is night), to give a quick
+		   overview of each region's appearance.</p>
+		<h2>The Midwest: </h2>
+		<div class="row">
+		<div class="column one-wide">
+		<img src="./dev/midwest_og_game.png" alt="The 'Midwest' region of the game" width=100%>
+		</div>
+		</div>
+		
+
+		
+		<br><br>
+		
+		<h2>The Northeast: </h2>
+		
+				
+				<div class="row">
+		<div class="column one-wide">
+					<img src="./dev/northeast_og_game.png" alt="The 'North-East' region of the game" width=100%>
+
+				</div>
+		</div>
+		
+		<br><br>
+		
+		<h2>The West</h2>
+		<p> The West is a special case; I have chosen not to use it in the Big Buck Hunter: Restoration project.
+		 It does not correspond to nature as well as the other areas of the game, instead it is very obviously
+		  designed with gameplay/shooting in mind.</p>
+						<div class="row">
+		<div class="column one-wide">
+		
+		<img src="./dev/west_og_game.png" alt="The 'West' region of the game" width=100%>
+				</div>
+		</div>
+		
+		<br>
+		
+		<h2>The South: </h2>
+		
+						<div class="row">
+		<div class="column one-wide">
+		
+		<img src="./dev/south_og_game.png" alt="The 'South' region of the game" width=100%>
+		
+						</div>
+		</div>
+		
+		<br><br>
+		
+		<h2>Big Buck Hunter: Restoration cannot use the same landscapes from the original game.</h2>
+		<p>Big Buck Hunter: Restoration does not use any of the levels from the original game, it instead generates
+		 new landscapes infinitely using the existing game assets. There are two main reasons for this. The first
+		  is that the component of infinite generation is needed to capture the eternal quality of life before the fall.</p>
+		  
+		<p>The second reason is that <b>every element of the original Big Buck Hunter game – including the trees,
+		 rocks, and more – are precisely and meticulously arranged to serve a violent purpose.</b> It is clear that
+		  the gameworld in Big Buck Hunter was designed with hunting as the sole aim. This is evident not only
+		   in the visual references to hunting (such as deer-stands / hunting cabins in some levels), but
+		    also less visibly in the subtleties of the landscapes themselves. In the West region of the game
+		     the rocks are slightly taller than the deer, allowing the deer to pass behind them while
+		      running away causing the player to accidentally shoot a rock (there are dedicated voice-lines
+		       to this that can play after every round, after shooting a tree there is a chance for the announcer
+		        to say "You hit the tree..."). As the game progresses throughout the day, the levels get more
+		         and more cluttered with ‘obstacles’ as a type of scaling difficulty. It's worth noting that also the day-night cycle itself is included
+		         primarily to scale the difficulty of the shooting challenge (the darker levels are more difficult to pick out deer in) - and not to indicate the passage of time.
+		          Fog is introduced in the
+		          evening levels of most regions, it serves to enrich the visual quality of the levels in the game,
+		           but also to obscure the bucks visually. Fog is implemented as a flat semi-transparent plane with
+		            a fog texture on it; and when it is present, bucks almost exclusively spawn behind this fog
+		             (even though it is located towards the rear of the level and there is often more space unobscured by fog).
+		              Most of the time, the level will begin with bucks eating or standing in a position that conceals
+		               their antlers from the camera - rendering them effectively identical to the does which the player
+		                must avoid killing. Nothing in their grouping or positioning reflects the natural behavior of
+		                 wildlife. Every aspect is designed for the player to enjoy a shooting challenge; and this design
+		                  logic is built into the arrangement of nearly every landscape in the game. For these reasons,
+		                   in making Big Buck Hunter nonviolent, it is needed to change both the landscapes and the behaviors
+		                    of the deer, and to remove violence as the foundation of these things.</p>
+
+		<p>Hunting-stands, objects related to death (e.g. bone/skull decorations present in some levels),
+		 and other larger structures like barns/tractors/etc have been removed. Smaller man-made objects
+		  like fences remain infrequently in the modified game - these do not inherently reflect our broken
+		   relationship with nature. Big Buck Hunter: Restoration does not seek a world devoid of human presence,
+		    but one where our relationship and interaction with the rest of creation is not so distorted as it is
+		     in the original title, and as it is in our real world today.</p>
+
+		<p>Below are a few images of procedurally generated landscapes from a recording of Big Buck Hunter: Restoration - however
+		 you can see more on the section dedicated to <a href="#cabphoto"><b>Photos of the modified arcade cabinet</b></a>.</p>
+		
+
+
+<div class="row">
+    <div class="column two-wide">
+        <a href="./dev/gen (2).jpg"><img src="./dev/gen (2).jpg" alt="Camera Angle 1" width="100%"></a>
+    </div>
+    <div class="column two-wide">
+        <a href="./dev/gen (3).jpg"><img src="./dev/gen (3).jpg" alt="Camera Angle 2" width="100%"></a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column two-wide">
+        <a href="./dev/gen (1).jpg"><img src="./dev/gen (1).jpg" alt="Camera Angle 3" width="100%"></a>
+    </div>
+    <div class="column two-wide">
+        <a href="./dev/gen (5).jpg"><img src="./dev/gen (5).jpg" alt="Camera Angle 4" width="100%"></a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column two-wide">
+        <a href="./dev/gen_ne1.png"><img src="./dev/gen_ne1.png" alt="Camera Angle 5" width="100%"></a>
+    </div>
+    <div class="column two-wide">
+        <a href="./dev/gen_ne2.png"><img src="./dev/gen_ne2.png" alt="Camera Angle 6" width="100%"></a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column two-wide">
+        <a href="./dev/gen_ne3.png"><img src="./dev/gen_ne3.png" alt="Camera Angle 7" width="100%"></a>
+    </div>
+    <div class="column two-wide">
+        <a href="./dev/gen_ne4.png"><img src="./dev/gen_ne4.png" alt="Camera Angle 8" width="100%"></a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column two-wide">
+        <a href="./dev/gen_s1.png"><img src="./dev/gen_s1.png" alt="Camera Angle 9" width="100%"></a>
+    </div>
+    <div class="column two-wide">
+        <a href="./dev/gen_s2.png"><img src="./dev/gen_s2.png" alt="Camera Angle 10" width="100%"></a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column two-wide">
+        <a href="./dev/gen_s3.png"><img src="./dev/gen_s3.png" alt="Camera Angle 11" width="100%"></a>
+    </div>
+    <div class="column two-wide">
+        <a href="./dev/gen_s4.png"><img src="./dev/gen_s4.png" alt="Camera Angle 12" width="100%"></a>
+    </div>
+</div>
+</div>
+
+		<br>
+		<a id="animals"></a>
+		<h2>The animals in <i>Big Buck Hunter</i></h2>
+
+		<p>Of course, deer are present, both does and bucks. Other animals appear in “bonus rounds,” including turkeys,
+		 ducks, fish, mosquitos, pheasants, and quail.</p>
+		<p>Never in the original game do two different types of animals see or interact with each other; it's either a deer
+		 shooting level or a bonus level. Some of the bonus levels are designed specifically to accommodate one animal
+		  (for example, ducks inhabit a level set on a lake) - while other bonus levels are made with repurposed deer-level
+		   assets (the turkey shooting bonus level is built out of assets from the 'morning' levels in the south region).</p>
+		<p>All animal behavior in the original Big Buck Hunter conveys fear: deer have animations only for being startled,
+		 fleeing, or dying, and they lack even a simple walking animation. The turkeys likewise also only have a fleeing
+		  animation and a death animation. The pheasants, quail, and ducks have death and flying animations, but the only
+		   time they are seen flying is straight up out of grass/cover - which is how they fly in real life when they are
+		    suddenly startled. It's worth noting that the duck level is a full 3d scene of a lake (even with animated water!)
+		     - and the ducks (as well as the pheasants and quail) have fully modeled legs that would allow them to swim
+		      or walk, but these behaviors are never seen and their legs are never utilized in the original game.</p>
+		<br>
+
+<div class="row">
+    <div class="column two-wide">
+        <a href="./dev/pheasants_original_game.png"><img src="./dev/pheasants_original_game.png" alt="Pheasants in the original game" width="100%"></a>
+    </div>
+    <div class="column two-wide">
+        <a href="./dev/ducks_original_game.png"><img src="./dev/ducks_original_game.png" alt="Ducks in the original game" width="100%"></a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column two-wide">
+        <a href="./dev/quail_original_game.png"><img src="./dev/quail_original_game.png" alt="Quail in the original game" width="100%"></a>
+    </div>
+    <div class="column two-wide">
+        <a href="./dev/turkeys_original_game.png"><img src="./dev/turkeys_original_game.png" alt="Turkeys in the original game" width="100%"></a>
+    </div>
+</div>
+  <i>Above: Pheasants, Ducks, Quail, and Turkeys; how they appear + behave in the original game (its not apparent in the screenshot, but the Turkeys are all running quickly in different directions)</i>
+	<br>
+	<h2>The animals in <i>Big Buck Hunter: Restoration</i></h2>
+	
+<div class="row">
+    <div class="column two-wide">
+        <a href="./dev/pheasants_restoration.png" target="_blank"><img src="./dev/pheasants_restoration.png" alt="Pheasants in BBH: Restoration" width="100%"></a>
+    </div>
+    <div class="column two-wide">
+        <a href="./dev/ducks_restoration.png" target="_blank"><img src="./dev/ducks_restoration.png" alt="Ducks in BBH: Restoration" width="100%"></a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column one-wide">
+        <a href="./dev/turkeys_restoration.png" target="_blank"><img src="./dev/turkeys_restoration.png" alt="Turkeys in BBH: Restoration" width="100%"></a>
+    </div>
+</div>
+  <i>Above: Pheasants, Ducks, and Turkeys as they appear + behave in Big Buck Hunter: Restoration</i>
+  <br>
+  
+  <div class="row">
+  <div class="column two-wide">
+	   </div>
+	     <div class="column half-except-phone">
+			 	  	  <img src="buckmeetingturkey.PNG" width=100%>
+
+	   </div>
+
+
+  
+  </div>
+	<div class="row">
+  	<p>To reflect the unity of creation before the fall, different types of animals now coexist and interact
+  	 with each other; eliminating the fragmentation present in the original game. Their behaviors and animations
+  	  have been entirely rewritten to correspond with peace, rest, and lack of death. Ducks can now swim and eat;
+  	   pheasants and quail now can land, walk, and eat. Their movement corresponds to one another’s positions;
+  	    just as birds flock in air and on the ground, as opposed to the original game where birds followed predetermined
+  	     fleeing routes. Additionally, because no female turkey model existed in the original game, the default tom
+  	      turkey model has been modified to create a hen. This was especially crucial since so much turkey behavior
+  	       I've observed in real life revolves around the interactions between toms and their hens. Apart from ducks
+  	        - who live on water where the other animals can't follow them, all the animals can now walk, eat, and rest
+  	         in the same landscapes alongside one another. </p>
+
+	</div>
+
+  </div>
+  
+<div class="row">
+<div class="column one-wide">
+	<img src="watchingtom_cropped.gif" width=100%>
+
+</div>
+
+</div>
+	
+	
+    </div>
+
+<hr>
+<!-- wild deer photos and videos! -->
+
+    <div class="content">
+        <h1 id="trailcam">Wild Deer Photographs + Videos</h1>
+
+        <p>Trail-Cam Videos Recorded At My Home In West Virginia</p>
+        <p> Click a video to go fullscreen</p>
+
+<div class="row">
+    <div class="column two-wide">
+        <a href="./vids/1.mp4" download="1.mp4">
+            <img src="./vids/1.gif" alt="Younger deer playing and chasing each other" width="100%">
+        </a>
+        Younger deer playing and chasing each other
+    </div>
+    <div class="column two-wide">
+        <a href="./vids/2.mp4" download="2.mp4">
+            <img src="./vids/2.gif" alt="Two toms bring their hens out to graze" width="100%">
+        </a>
+        Two toms bring their hens out to graze
+    </div>
+</div>
+
+<div class="row">
+    <div class="column two-wide">
+        <a href="./vids/3.mp4" download="3.mp4">
+            <img src="./vids/3.gif" alt="Deer eating cracked corn at night" width="100%">
+        </a>
+        Deer eating cracked corn at night
+    </div>
+    <div class="column two-wide">
+        <a href="./vids/4.mp4" download="4.mp4">
+            <img src="./vids/4.gif" alt="A doe and two turkeys together in the woods" width="100%">
+        </a>
+        A doe and two turkeys together in the woods
+    </div>
+</div>
+
+<br>
+<div>More videos coming soon! Click the animated GIF previews to download a copy of the video with sound!</div>
+            
+
+            
+<p>
+One of the most fruitful aspects of working on the project was spending time with real deer, I spent a lot of
+ time in a deer blind (a camoflauge tent) trying to get good photographs of them, and a lot of time checking
+  or repositioning trail-cams. The initial aim of this was to study the behavior of the deer so that I could
+   better translate this to the programming of the deer in Big Buck Hunter: Restoration - as the deer in the
+    original Big Buck Hunter game can only become startled and run away, they never lay down, rest, or even
+     walk slowly around. I enjoyed this greatly and got much more out of it than a study of behavior. I hope
+      that I will keep being able to do this even though the project is finished now.
+</p>
+</div>
+<h1>Photos taken with a handheld camera, either from a blind or from 'stalking'</h1>
+
+    </div>
+
+
+<div class="row">
+    <div class="column two-wide">
+        <a href="./vids/1.png" target="_blank"><img src="./vids/1.png" alt="wild deer photo 1" width="100%"></a>
+    </div>
+    <div class="column two-wide">
+        <a href="./vids/2.png" target="_blank"><img src="./vids/2.png" alt="wild deer photo 2" width="100%"></a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column two-wide">
+        <a href="./vids/3.png" target="_blank"><img src="./vids/3.png" alt="wild deer photo 3" width="100%"></a>
+    </div>
+    <div class="column two-wide">
+        <a href="./vids/4.png" target="_blank"><img src="./vids/4.png" alt="wild deer photo 4" width="100%"></a>
+    </div>
+</div>
+</div>
+
+
+    <script>
+        // Add fullscreen functionality when a video is clicked
+        document.querySelectorAll('video').forEach(video => {
+            video.addEventListener('click', () => {
+                if (video.requestFullscreen) {
+                    video.requestFullscreen();
+                } else if (video.webkitRequestFullscreen) { // Safari
+                    video.webkitRequestFullscreen();
+                } else if (video.msRequestFullscreen) { // IE11
+                    video.msRequestFullscreen();
+                }
+            });
+
+            // Toggle sound when entering/exiting fullscreen
+            video.addEventListener('fullscreenchange', () => {
+                if (document.fullscreenElement) {
+                    video.muted = false;  // Unmute when fullscreen
+                } else {
+                    video.muted = true;  // Mute when exiting fullscreen
+                }
+            });
+
+            // For browsers like Safari that use webkitfullscreenchange
+            video.addEventListener('webkitfullscreenchange', () => {
+                if (document.webkitFullscreenElement) {
+                    video.muted = false;  // Unmute when fullscreen
+                } else {
+                    video.muted = true;  // Mute when exiting fullscreen
+                }
+            });
+        });
+    </script>
+
+
+<hr>
+<!-- cabinet photos, like of the screen -->
+
+
+    <div class="content">
+        <h1 id="cabphoto">Photographs of a Big Buck Hunter arcade cabinet running the "Big Buck Hunter: Restoration" Mod</h1>
+		<h3>All images may be clicked to enlarge!</h3>
+
+<p>These are still images taken of the arcade machine running the mod. Big Buck Hunter: Restoration is not a
+ video or collection of still images, it continually runs, generates new landscapes, and the animals inside
+  react to their environment and to each other live. It never loops exactly; the same exact landscape is never
+   made twice, and runs continually on a 3-day cycle of autumn, winter, and spring/summer. </p>
+<div class="row">
+    <div class="column four-wide">
+        <a href="./cabphoto/northeast1.jpg" target="_blank"><img src="./cabphoto/northeast1.jpg" alt="arcade photo 9" width="100%"></a>
+        <i>Northeast Region: Morning</i>
+    </div>
+    <div class="column four-wide">
+        <a href="./cabphoto/northeast2.jpg" target="_blank"><img src="./cabphoto/northeast2.jpg" alt="arcade photo 10" width="100%"></a>
+        <i>Midwest Region: Mid-day</i>
+    </div>
+    <div class="column four-wide">
+        <a href="./cabphoto/northeast3.jpg" target="_blank"><img src="./cabphoto/northeast3.jpg" alt="arcade photo 11" width="100%"></a>
+        <i>Midwest Region: Evening</i>
+    </div>
+    <div class="column four-wide">
+        <a href="./cabphoto/northeast4.jpg" target="_blank"><img src="./cabphoto/northeast4.jpg" alt="arcade photo 12" width="100%"></a>
+        <i>Midwest Region: Night</i>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column four-wide">
+        <a href="./cabphoto/5.png" target="_blank"><img src="./cabphoto/5.png" alt="arcade photo 5" width="100%"></a>
+        <i>Midwest Region: Morning</i>
+    </div>
+    <div class="column four-wide">
+        <a href="./cabphoto/6.png" target="_blank"><img src="./cabphoto/6.png" alt="arcade photo 6" width="100%"></a>
+        <i>Midwest Region: Mid-day</i>
+    </div>
+    <div class="column four-wide">
+        <a href="./cabphoto/7.png" target="_blank"><img src="./cabphoto/7.png" alt="arcade photo 7" width="100%"></a>
+        <i>Midwest Region: Evening</i>
+    </div>
+    <div class="column four-wide">
+        <a href="./cabphoto/8.png" target="_blank"><img src="./cabphoto/8.png" alt="arcade photo 8" width="100%"></a>
+        <i>Midwest Region: Night</i>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column four-wide">
+        <a href="./cabphoto/1.png" target="_blank"><img src="./cabphoto/1.png" alt="arcade photo 1" width="100%"></a>
+        <i>South Region: Morning</i>
+    </div>
+    <div class="column four-wide">
+        <a href="./cabphoto/2.png" target="_blank"><img src="./cabphoto/2.png" alt="arcade photo 2" width="100%"></a>
+        <i>South Region: Mid-day</i>
+    </div>
+    <div class="column four-wide">
+        <a href="./cabphoto/3.png" target="_blank"><img src="./cabphoto/3.png" alt="arcade photo 3" width="100%"></a>
+        <i>South Region: Evening</i>
+    </div>
+    <div class="column four-wide">
+        <a href="./cabphoto/4.png" target="_blank"><img src="./cabphoto/4.png" alt="arcade photo 4" width="100%"></a>
+        <i>South Region: Night</i>
+    </div>
+</div>
+
+    <p>Below is an image of the machine - when the project was still a work in progress - on display at Paris Photo fair in 2023 (in l'Avant Galerie Vossen's booth)</p>
+    	<a href="bbhmachine.png"><img src="./bbhmachine_dithered.png" width=50%></a>
+
+    
+    </div>
+
+<hr>
+<!-- next steps.. -->
+
+<div class="content">
+        <h1 id="next">Next steps for Big Buck Hunter: Restoration</h1>
+        
+			<p>
+			Big Buck Hunter: Restoration took a long time to finish. Ideally, now that it is complete, I would like to see it
+			 permanently placed in a local bar or small restaurant in West Virginia—the exact type of environment where I
+			  encountered the original game while growing up.</p>
+			</p>
+			<p>It was on display at l'Avant Galerie Vossen, in Paris, from January 23rd, 2025, until early March, as
+			 part of my first solo show. Hopefully at some point in Autumn 2026, it will be on display in the United States.</p>
+	       
+	        </p>
+	        
+	        <p>Since it is a monumental work, and an edition of 1, I also produced some "postcards"/souvenirs, small
+	         plexiglass prints in wooden frames, of small studies/scenes I made during the development of Big Buck Hunter: Restoration.
+	          These postcards are made using different models from the original game, and are affordable so that everyone who liked the
+	           project can take a part of it home if they want to. If you want one,
+	            contact the gallery: <a href="https://avant-galerie.com/en/contact">https://avant-galerie.com/en/contact</a>.</p>
+	
+	<img width="100%" src="bbh_postcards.jpg">
+	
+	<!-- <img  width="50%" src="footer.gif"/> -->
+	    <br><br><br>
+
+    </div>
+    <div class="content">
+        <h1 id="reading">Other Reading</h1>
+        
+<ul>
+	<style="font-weight: normal;">
+  <li>"<i>Amazing Whitetails</i>" by Mike Biggs, 1994</li>
+  <li>"<i>The Whitetail Chronicles</i>" by Mike Biggs, 1998</li>
+  <li>"<i>Whitetails in Action</i>" by Mike Biggs, 1996</li>
+  <li>"<i>The First Created Man</i>" by St. Symeon the New Theologian (+1022) (translated by Fr. Seraphim Rose)</li>
+  <li>"<i>The Resurrection and the Icon</i>" by Michel Quenot, 1998</li>
+  <li>"<i>Hexameron</i>" by St. Basil the Great (+379) </li>
+  <li>"<i>Genesis, Creation, and Early Man</i>" by Fr. Seraphim Rose</li>
+  <li>"<i>Touching the Wild: Living with the Mule Deer of Deadman Gulch</i>" by Joe Hutto, 2014</li>
+  <li>"<i>Illumination in the Flatwoods: A Season Living Among the Wild Turkey</i>" by Joe Hutto, 2011</li>
+  <li>*PBS has produced two episodes of "<i>Natural World</i>" based on the above two books by Joe Hutto. They are absolutely worth watching, titled "<i>Touching the Wild</i>" and "<i>My Life as a Turkey</i>".</li>
+	</ul>
+	</h2>
+	<br><br><br><br><br>
+<img src="resting.png" width=100%>
+    </div>
