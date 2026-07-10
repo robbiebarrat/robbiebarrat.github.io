@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>L-systems</title>
+    
+<style>
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; 
+}
+
+.column {
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+/* widths */
+.three-wide {
+    width: 33.33%;
+}
+
+.four-wide {
+    width: 25%;
+}
+
+.two-wide {
+    width: 50%;
+}
+
+.one-wide {
+    width: 100%;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+</style>
+</head>
+<body>
+<a href="./index.html">&larr; Return to the index page</a>
+
+    <h1>L-systems</h1>
+
+    <p>
+		L-systems (Lindenmayer systems, named after Hungarian biologist Aristid Lindenmayer) are a type of formal language created to model the growth of plants. Originally it was used to model the behavior of plant cells, but it can also be used to model entire plants. They really are the epitome of why I'm interested in generative art, you can have such a simple set of rules that gives an incredibly lifelike result - I think that it's easy to dismiss generative/computer art as being artificial and divorced from nature but with L-systems it's easy to see that the two are very very similar. You could even say that generative art is a better suited (or at least, a similarly suited) medium for capturing nature than painting, in some cases - if we are talking about capturing the 'essence', and not just concerned with physical realism. The fact that you can use a very small set of simple rules to get such a lifelike plant; and the fact that it stems from the behavior of plant cells, really makes me think that this is getting close to something like the actual underlying rules that are followed by real plants. The fact that it is a language as well makes me think this doubly, since I believe that language underlies nature/creation ("In the beginning was the Word...", and God creating the world by language in Genesis). I just think that while making these it was nice to think about the creation of the world through language and the connection to creating images with a programming language. <br><br>
+		These pieces are shown on e-Ink screens (like what a kindle/e-reader screen is made out of) that have been disconnected. Since e-Ink actually involves the physical movement of ink, when these are unplugged they become frozen and the image stays on them without any electricity. It's really rare to be able to keep the digital image on a screen where it belongs, and also have it be a static physical piece that can be shown on a wall, I'm really happy about this.
+        <br><br>
+        The physical pieces are approximately 9 5/8 x 7 1/4 in.<br>
+        All images can be clicked to enlarge.
+    </p>
+	<div class="row">
+	<div class="column two-wide"> 
+	 <a href="./lsystems_files/RB0001.jpg"><img src="./lsystems_files/RB0001.jpg" width="100%"></a>
+	</div>
+		<br>
+		<div class="column two-wide"> 
+	 <a href="./lsystems_files/RB0003.jpg"><img src="./lsystems_files/RB0003.jpg" width="100%"></a>
+	</div>
+	</div>
+	<br>
+
+	<div class="row">
+		<div class="column two-wide"> 
+	 <a href="./lsystems_files/RB0004-2.jpg"><img src="./lsystems_files/RB0004-2.jpg" width="100%"></a>
+	</div>
+		<br>
+		<div class="column two-wide"> 
+	 <a href="./lsystems_files/RB0005-2.jpg"><img src="./lsystems_files/RB0005-2.jpg" width="100%"></a>
+	</div>
+	</div>
+	<br>
+	
+	<div class = "row">
+	<div class = "column four-wide">
+		 <a href="./lsystems_files/BARRAT Robbie . L_System_1 . 2024 . 24,5 x  18,5 cm.jpg"><img src="./lsystems_files/BARRAT Robbie . L_System_1 . 2024 . 24,5 x  18,5 cm.jpg" width="100%"></a>
+	</div>
+		<div class = "column four-wide">
+		 <a href="./lsystems_files/BARRAT Robbie . L_System_2 . 2024 . 24,5 x  18,5 cm.jpg"><img src="./lsystems_files/BARRAT Robbie . L_System_2 . 2024 . 24,5 x  18,5 cm.jpg" width="100%"></a>
+	</div>
+		<div class = "column four-wide">
+		 <a href="./lsystems_files/BARRAT Robbie . L_System_3 . 2024 . 24,5 x  18,5 cm.jpg"><img src="./lsystems_files/BARRAT Robbie . L_System_3 . 2024 . 24,5 x  18,5 cm.jpg" width="100%"></a>
+	</div>
+		<div class = "column four-wide">
+		 <a href="./lsystems_files/BARRAT Robbie . L_System_3 . 2024 . 24,5 x  18,5 cm.jpg"><img src="./lsystems_files/BARRAT Robbie . L_System_4 . 2024 . 24,5 x  18,5 cm.jpg" width="100%"></a>
+	</div>
+	</div>
+	<hr>
+		<br>
+		Below are some of the earlier experiments that led to this work. Waveshare used to make e-ink screens that were able to connect via HDMI (not SPI) - so I could be playing a generative model of a plant growing (left picture), and then unplug the screen during the animation, and be left with a nice trailing/ghosting effect. Unfortunately with SPI, it's probably still possible, but so slow that I had a hard time doing the same type of process.
+		These are also just the e-ink panels put into a scanner, since I didn't know how to present them yet, I was just trying to digitize them.
+		<br><br>
+	<div class="row">
+		<div class="column two-wide"> 
+	 <a href="./lsystems_files/earlyexperiment1.jpg"><img src="./lsystems_files/earlyexperiment1.jpg" width="100%"></a>
+	</div>
+		<br>
+		<div class="column two-wide"> 
+	 <a href="./lsystems_files/earlyexperiment2.jpg"><img src="./lsystems_files/earlyexperiment2.jpg" width="100%"></a>
+	</div>
+	</div>
+	<hr>
+	Below are much earlier experiments with L-systems, from before I ever tried working with e-Ink. These are just screenshots. Sometimes I was using some parts of the process I had set up for gardening software, with a watercolor focus.
+    <br><br>
+    
+    <div class="row">
+    <div class="column two-wide">
+    <a href="./lsystems_files/screenshot.jpg"><img src="./lsystems_files/screenshot.jpg" width="100%"></a>
+
+    </div>
+    <div class="column two-wide">
+    <a href="./lsystems_files/wilt.png"><img src="./lsystems_files/wilt.png" width="100%"></a>
+    </div>
+    </div>
+    
+
+    
+    
+    <div class="row">
+    <div class="column two-wide">
+    <a href="./lsystems_files/paint1.jpg"><img src="./lsystems_files/paint1.jpg" width="100%"></a>
+
+    </div>
+    <div class="column two-wide">
+    <a href="./lsystems_files/paint2.jpg"><img src="./lsystems_files/paint2.jpg" width="100%"></a>
+    </div>
+    </div>
+    
+    
+        
+    
+    <div class="row">
+    <div class="column two-wide">
+    <a href="./lsystems_files/whitecloth.png"><img src="./lsystems_files/whitecloth.png" width="100%"></a>
+
+    </div>
+    <div class="column two-wide">
+    <a href="./lsystems_files/normalflower.jpg"><img src="./lsystems_files/normalflower.jpg" width="100%"></a>
+    </div>
+    </div>
+    
+    		<div class="row">
+	<div class="column two-wide">
+    <a href="./newlandscapes_files/flower.jpg"><img src="./newlandscapes_files/flower.jpg" width="100%" ></a>
+	</div>
+	<div class="column two-wide">
+	<a href="./newlandscapes_files/flower2.jpg"><img src="./newlandscapes_files/flower2.jpg" width="100%" ></a>
+	</div>
+	</div>
+    
+    
+    
+    <div class="row">
+    <div class="column one-wide">
+    <a href="./lsystems_files/ascii2.png"><img src="./lsystems_files/ascii2.png" width="100%"></a>
+    </div>
+    </div>
+    <div class="row">
+    <div class="column one-wide">
+    <a href="./lsystems_files/texthighlight.png"><img src="./lsystems_files/texthighlight.png" width="100%"></a>
+    </div>
+    </div>
+    <div class="row">
+    <div class="column one-wide">
+    <a href="./lsystems_files/ascii1.jpg"><img src="./lsystems_files/ascii1.jpg" width="100%"></a>
+    </div>
+    </div>
+
+    <br>
+    <div class="row">
+    <div class="column two-wide">
+    <video loop autoplay muted playsinline width=100%>
+	<source src="lsystems_files/installation.mp4" type="video/webm">
+	Your browser does not support the video tag.
+	</video>
+	</div>
+	<div class="column two-wide"> 
+	Some HTML studies can be seen at the following links:<br>
+    <a href="http://robbiebarrat.github.io/lysm.html">robbiebarrat.github.io/lysm.html</a><br>
+    <a href="http://robbiebarrat.github.io/loml.html">robbiebarrat.github.io/loml.html</a><br>
+	And to the left is a video of how one of these looked in an installation... at PAL Project in Paris</div></div>
+	<hr>
+    Additionally, for anyone wanting to learn more about L-systems or make their own, "The Algorithmic Beauty of Plants" is an incredible book. You can find it in PDF here: <a href="https://algorithmicbotany.org/papers/abop/abop.pdf">https://algorithmicbotany.org/papers/abop/abop.pdf</a>
+	<br>
+	
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Buck Hunter: Restoration</title>
+<style>
+    body {
+        font-family: "Times New Roman", Times, serif;
+        background-color: white;
+        margin: 0;
+        padding: 20px;
+        -webkit-font-smoothing: none;
+        -moz-osx-font-smoothing: grayscale;
+        font-smoothing: none;
+        image-rendering: pixelated;
+        -webkit-text-stroke: 0.01px;
+    }
+
+    .header, .content {
+        image-rendering: pixelated;
+    }
+
+    .header b {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 1.0em;
+        letter-spacing: 0.3px;
+        -webkit-font-smoothing: none;
+        -moz-osx-font-smoothing: grayscale;
+        font-smoothing: none;
+        image-rendering: pixelated;
+    }
+
+    .nav a {
+        color: blue;
+        text-decoration: none;
+        image-rendering: pixelated;
+        -webkit-font-smoothing: none;
+        -moz-osx-font-smoothing: grayscale;
+        font-smoothing: none;
+    }
+
+    .nav a:hover {
+        text-decoration: underline;
+    }
+
+    .content {
+        width: 100%;
+        clear: both;
+    }
+
+    h1 {
+        font-weight: italic;
+        font-size: 2em;
+        letter-spacing: 1px;
+        -webkit-font-smoothing: none;
+        -moz-osx-font-smoothing: grayscale;
+        font-smoothing: none;
+        image-rendering: pixelated;
+    }
+
+    p {
+        font-size: 1em;
+        letter-spacing: 0.5px;
+        -webkit-font-smoothing: none;
+        -moz-osx-font-smoothing: grayscale;
+        font-smoothing: none;
+        image-rendering: pixelated;
+    }
+
+    /* Gallery container with float-based layout */
+    .gallery {
+        width: 100%;
+        overflow: hidden; /* Clear floats */
+        margin: 0;
+    }
+
+    .gallery-item {
+        float: left; /* Float to create columns */
+        width: 48%; /* Two items per row, leaving space for margins */
+        margin: 1%; /* Small margin between items */
+        box-sizing: border-box;
+        text-align: center; /* Center the caption */
+    }
+
+    /* Ensure GIF aspect ratio is maintained */
+    .gallery-item img {
+        width: 100%;
+        height: auto;
+        max-width: 100%; /* Ensures it scales with container */
+        image-rendering: pixelated; /* Retro blocky pixels */
+        -webkit-font-smoothing: none;
+        -moz-osx-font-smoothing: grayscale;
+        transform-origin: center;
+    }
+
+    /* Clear floats to ensure proper layout */
+    .gallery::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    /* Caption styling */
+    .caption {
+        font-size: 12px;
+        font-style: italic;
+        text-align: left;
+        margin-top: 5px;
+        letter-spacing: 1px;
+        -webkit-font-smoothing: none;
+        -moz-osx-font-smoothing: grayscale;
+        font-smoothing: none;
+        image-rendering: pixelated;
+    }
+    
+    
+        .deer-gallery a img {
+        width: 80%;
+        align: left;
+        height: auto; /* Maintain aspect ratio */
+        display: block; /* Stack images vertically */
+        margin: 10px auto; /* Center images with margin */
+    }
+</style>
+
+</head>
+<body>
+
+    <div class="header">
+        Big Buck Hunter: Restoration project site
+        <div class="nav">
+			<a href="../index.html">Index Page</a> | 
+            <a href="../theo.html">Project Aim</a> | 
+            <a href="../dev/development.html">What does <i>"Big Buck Hunter: Restoration"</i> change from the original game, and why?</a> | 
+            Wild Deer Photographs + Videos</a> | 
+            <a href="../cabphoto/cabphoto.html">Photographs of the modified arcade cabinet</a> | 
+            <a href="../next.html">Next Steps + Exhibition History</a> | 
+            <a href="../reading.html">Other Reading</a> |
+            <a href="../thankyou.html">"Thank you"s</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <h1>Wild Deer Photographs + Videos</h1>
+
+        <p>Trail-Cam Videos Recorded At My Home In West Virginia</p>
+        <p> Click a video to go fullscreen</p>
+
+<div class="gallery">
+    <!-- GIF gallery with captions -->
+    <a href="1.mp4" download="1.mp4">
+        <img src="1.gif" alt="Younger deer playing and chasing each other">
+    </a>
+    <div class="caption">Younger deer playing and chasing each other</div>
+    <br>
+
+    <a href="2.mp4" download="2.mp4">
+        <img src="2.gif" alt="Two toms bring their hens out to graze">
+    </a>
+    <div class="caption">Two toms bring their hens out to graze</div>
+    <br>
+
+    <a href="3.mp4" download="3.mp4">
+        <img src="3.gif" alt="Deer eating cracked corn at night">
+    </a>
+    <div class="caption">Deer eating cracked corn at night</div>
+    <br>
+
+    <a href="4.mp4" download="4.mp4">
+        <img src="4.gif" alt="A doe and two turkeys together in the woods">
+    </a>
+    <div class="caption">A doe and two turkeys together in the woods</div>
+    <br>
+
+    <br>
+    <div class="caption">More videos coming soon! Click the animated GIF previews to download a copy of the video with sound!</div>
+</div>
+
+
+            
+
+            
+<p>
+One of the most fruitful aspects of working the project was spending time with real deer, I spent a lot of time in a deer blind (a camoflauge tent) trying to get good photographs of them, and a lot of time checking or repositioning trail-cams. The initial aim of this was to study the behavior of the deer so that I could better translate this to the programming of the deer in Big Buck Hunter: Restoration - as the deer in the original Big Buck Hunter game can only become startled and run away, they never lay down, rest, or even walk slowly around. I enjoyed this greatly and got much more out of it than a study of behavior. I hope that I will keep being able to do this even though the project is finished now.
+</p>
+</div>
+<h1>Photos taken with a handheld camera, either from a blind or from 'stalking'</h1>
+
+    </div>
+
+<div class="deer-gallery">
+
+    <!-- Loop through 5 rows of 4 images each -->
+    <!-- Gallery items 1-20 -->
+        <a href="1.png" target="_blank"><img src="1.png" alt="wild deer photo 1"></a>
+        <a href="2.png" target="_blank"><img src="2.png" alt="wild deer photo 2"></a>
+        <a href="3.png" target="_blank"><img src="3.png" alt="wild deer photo 3"></a>
+        <a href="4.png" target="_blank"><img src="4.png" alt="wild deer photo 4"></a>
+
+</div>
+
+
+    <script>
+        // Add fullscreen functionality when a video is clicked
+        document.querySelectorAll('video').forEach(video => {
+            video.addEventListener('click', () => {
+                if (video.requestFullscreen) {
+                    video.requestFullscreen();
+                } else if (video.webkitRequestFullscreen) { // Safari
+                    video.webkitRequestFullscreen();
+                } else if (video.msRequestFullscreen) { // IE11
+                    video.msRequestFullscreen();
+                }
+            });
+
+            // Toggle sound when entering/exiting fullscreen
+            video.addEventListener('fullscreenchange', () => {
+                if (document.fullscreenElement) {
+                    video.muted = false;  // Unmute when fullscreen
+                } else {
+                    video.muted = true;  // Mute when exiting fullscreen
+                }
+            });
+
+            // For browsers like Safari that use webkitfullscreenchange
+            video.addEventListener('webkitfullscreenchange', () => {
+                if (document.webkitFullscreenElement) {
+                    video.muted = false;  // Unmute when fullscreen
+                } else {
+                    video.muted = true;  // Mute when exiting fullscreen
+                }
+            });
+        });
+    </script>
+
+
+</body>
+</html>

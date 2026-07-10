@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Generation Gallery</title>
+  <style>
+    .generation-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px; /* Space between images */
+      justify-content: flex-start;
+      align-items: flex-start; /* Ensure all images align at the top */
+      box-sizing: border-box;
+      width: 100%; /* Make sure the gallery can span the full width */
+      margin: 0;
+      padding: 0;
+    }
+
+    .generation-gallery a {
+      flex: 1 1 calc(33.33% - 20px);
+      box-sizing: border-box;
+      max-width: 640px;
+      text-decoration: none;
+    }
+
+    .generation-gallery img {
+      width: 100%;
+      height: auto;
+      display: block;
+      image-rendering: pixelated;
+    }
+  </style>
+</head>
+<body>
+  <div class="generation-gallery">
+    <a href="pheasants_original_game.png" target="_blank">
+      <img src="pheasants_original_game.png" alt="Pheasants in the original game">
+    </a>
+    <a href="ducks_original_game.png" target="_blank">
+      <img src="ducks_original_game.png" alt="Ducks in the original game">
+    </a>
+    <a href="quail_original_game.png" target="_blank">
+      <img src="quail_original_game.png" alt="Quail in the original game">
+    </a>
+    <a href="quail_original_game.png" target="_blank">
+      <img src="quail_original_game.png" alt="Quail in the original game">
+    </a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Buck Hunter: Restoration</title>
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            background-color: white;
+            margin: 0;
+            padding: 20px;
+            -webkit-font-smoothing: none;
+            -moz-osx-font-smoothing: grayscale;
+            font-smoothing: none;
+            image-rendering: pixelated; /* Ensure pixelated rendering */
+            -webkit-text-stroke: 0.01px; /* Force no text stroke */
+        }
+
+        .header, .content {
+            image-rendering: pixelated;
+        }
+
+        .header b {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.0em;
+            letter-spacing: 0.3px;
+            -webkit-font-smoothing: none;
+            -moz-osx-font-smoothing: grayscale;
+            font-smoothing: none;
+            image-rendering: pixelated;
+        }
+
+        .nav a {
+            color: blue;
+            text-decoration: none;
+            image-rendering: pixelated;
+            -webkit-font-smoothing: none;
+            -moz-osx-font-smoothing: grayscale;
+            font-smoothing: none;
+        }
+
+        .nav a:hover {
+            text-decoration: underline;
+        }
+
+        .content {
+            width: 90%;
+            float: left;
+        }
+        
+        next-pic {
+            width: 90%;
+            float: left;
+        }
+        
+        h1 {
+            font-weight: italic;
+            font-size: 2em;
+            letter-spacing: 1px;
+            -webkit-font-smoothing: none;
+            -moz-osx-font-smoothing: grayscale;
+            font-smoothing: none;
+            image-rendering: pixelated;
+        }
+
+        p {
+            font-size: 1em;
+            letter-spacing: 0.5px;
+            -webkit-font-smoothing: none;
+            -moz-osx-font-smoothing: grayscale;
+            font-smoothing: none;
+            image-rendering: pixelated;
+        }
+
+        fathers {
+
+            image-rendering: pixelated;
+            -webkit-font-smoothing: none;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        
+    .generation-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px; /* Space between images */
+      justify-content: flex-start;
+      align-items: flex-start; /* Ensure all images align at the top */
+      box-sizing: border-box;
+      width: 100%; /* Make sure the gallery can span the full width */
+      margin: 0;
+      padding: 0;
+    }
+
+    .generation-gallery a {
+      flex: 0 0 calc(33.33% - 2px)
+      box-sizing: border-box;
+      max-width: 350px;
+      text-decoration: none;
+    }
+
+    .generation-gallery img {
+      width: 100%;
+      max-width: 640px;
+
+      height: auto;
+      display: block;
+      image-rendering: pixelated;
+    }
+        
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        Big Buck Hunter: Restoration project site
+        <div class="nav">
+			<a href="../index.html">Index Page</a> | 
+            <a href="../theo.html">Project Aim</a> | 
+            What does <i>"Big Buck Hunter: Restoration"</i> change from the original game, and why?</a> | 
+            <a href="../vids/videos.html">Wild Deer Photographs + Videos</a> | 
+            <a href="../cabphoto/cabphoto.html">Photographs of the modified arcade cabinet</a> | 
+            <a href="../next.html">Next Steps + Exhibition History</a> | 
+            <a href="../reading.html">Other Reading</a> |
+            <a href="../thankyou.html">"Thank you"s</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <h1>Big Buck Hunter (2000) - Development and Nature of the Original Game</h1>
+        <p>
+			This page covers the characteristics of the original game, what exactly it contains, and reasoning/details of the major modifications made to it.
+		</p>
+		<h2>Page Contents (click to skip to a section):</h2>
+		<li><a href=#landscapes>Levels/landscapes in the original game</a></li>
+		<li><a href=#animals>Animals in the original game</a></li>
+		<br>
+		<a id="landscapes"></a>
+		<h2>Levels in the original game</h2>
+        <p>Big Buck Hunter features four distinct regions, the South, Midwest, Northeast, and the West.
+
+        </p>
+        <img src="regions.png" alt="Regions of the game">
+		<p> Each region is further divided into four groups corresponding to times of day - morning, noon, evening, and night. For each of these times of day, there are four levels that can be played. The player has to kill three bucks before they can advance to the next time of day, killing a maximum of one buck per level. If the player successfully finishes an entire day, from morning to night, the game displays a congratulatory message and requires more money to choose another region to play. The game is finished when all four regions are completed, and 48 bucks are killed.</p>
+		<p>Below are some of the levels from the original (unmodified) game, grouped by the regions. In the images below there is only one level shown for each time of day (top left is morning, top right is mid-day, bottom left is evening, and bottom right is night), to give a quick overview of each region's appearance.</p>
+		<h2>The Midwest: </h2>
+		<img src="midwest_og_game.png" alt="The 'South' region of the game">
+		<br><br>
+		
+		<h2>The Northeast: </h2>
+		<img src="northeast_og_game.png" alt="The 'South' region of the game">
+		<br><br>
+		
+		<h2>The West</h2>
+		<p> The West is a special case, I have chosen not to use it in the Big Buck Hunter: Restoration project. It does not correspond to nature as well as the other areas of the game, instead it is very obviously designed with gameplay/shooting in mind.</p>
+		<img src="west_og_game.png" alt="The 'West' region of the game">
+		<br>
+		
+		<h2>The South: </h2>
+		<img src="south_og_game.png" alt="The 'South' region of the game">
+		<br><br>
+		
+		<h2>Big Buck Hunter: Restoration cannot use the same landscapes from the original game.</h2>
+		<p>Big Buck Hunter: Restoration does not use any of the levels from the original game, it instead generates new landscapes infinitely using the existing game assets. There are two main reasons for this. The first is that the component of infinite generation is needed to capture the eternal quality of life before the fall.</p>
+		<p>The second reason is that <b>every element of the original Big Buck Hunter game – including the trees, rocks, and more – are precisely and meticulously arranged to serve a violent purpose.</b> It is clear that the gameworld in Big Buck Hunter was designed with hunting as the sole aim. This is evident not only in the visual references to hunting (such as deer-stands / hunting cabins in some levels), but also less visibly in the subtleties of the landscapes themselves. In the West region of the game the rocks are slightly taller than the deer, allowing the deer to pass behind them while running away causing the player to accidentally shoot a rock (there are dedicated voice-lines to this that can play after every round, after shooting a tree there is a chance for the announcer to say "You hit the tree..."). As the game progresses throughout the day, the levels get more and more cluttered with ‘obstacles’ as a type of scaling difficulty. Fog is introduced in the evening levels of most regions, it serves to enrich the visual quality of the levels in the game, but also to obscure the bucks visually. Fog is implemented as a flat semi-transparent plane with a fog texture on it; and when it is present, bucks almost exclusively spawn behind this fog (even though it is located towards the rear of the level and there is often more space unobscured by fog). Most of the time, the level will begin with bucks eating or standing in a position that conceals their antlers from the camera - rendering them effectively identical to the does which the player must avoid killing. Nothing in their grouping or positioning reflects natural deer behavior; every aspect is designed for the player to enjoy a shooting challenge; and this very well is present in the arrangement of nearly every landscape in the game. For these reasons, in making Big Buck Hunter nonviolent, it is needed to change both the landscapes and the behaviors of the deer, and to remove violence as the foundation of these things.</p>
+
+		<p>Hunting-stands, objects related to death (e.g. bone/skull decorations present in some levels), and other larger structures like barns/tractors/etc have been removed. Smaller man-made objects like fences remain infrequently in the modified game - these do not inherently reflect our broken relationship with nature. Big Buck Hunter: Restoration does not seek a world devoid of human presence, but one where our relationship and interaction with the rest of creation is not so distorted as it is in the original title, and as it is in our real world today.</p>
+
+		<p>Below are a few images of procedurally generated landscapes from a recording of Big Buck Hunter: Restoration - however you can see more on the webpage dedicated to <a href="../cabphoto/cabphoto.html"><b>Photos of the modified arcade cabinet</b></a>.</p>
+		
+		<div class="generation-gallery">
+			<a href="#" target="_blank">
+				<img src="gen (2).jpg" alt="Camera Angle 1">
+			</a>
+			<a href="#" target="_blank">
+				<img src="gen (3).jpg" alt="Camera Angle 2">
+			</a>
+			<a href="#" target="_blank">
+				<img src="gen (1).jpg" alt="Camera Angle 3">
+			</a>
+			<a href="#" target="_blank">
+				<img src="gen (5).jpg" alt="Camera Angle 4">
+			</a>
+			<a href="#" target="_blank">
+				<img src="gen_ne1.png" alt="Camera Angle 5">
+			</a>
+			<a href="#" target="_blank">
+				<img src="gen_ne2.png" alt="Camera Angle 5">
+			</a>
+			<a href="#" target="_blank">
+				<img src="gen_ne3.png" alt="Camera Angle 5">
+			</a>
+			<a href="#" target="_blank">
+				<img src="gen_ne4.png" alt="Camera Angle 5">
+			</a>
+			<a href="#" target="_blank">
+				<img src="gen_s1.png" alt="Camera Angle 5">
+			</a>
+				<a href="#" target="_blank">
+					<img src="gen_s2.png" alt="Camera Angle 5">
+			</a>
+						<a href="#" target="_blank">
+				<img src="gen_s3.png" alt="Camera Angle 5">
+			</a>
+						<a href="#" target="_blank">
+				<img src="gen_s4.png" alt="Camera Angle 5">
+			</a>
+		</div>
+		
+		
+
+		<br>
+		<a id="animals"></a>
+		<h2>The animals in <i>Big Buck Hunter</i></h2>
+		<p>Of course, deer are present—both does and bucks. Other animals appear in “bonus rounds,” including turkeys, ducks, fish, mosquitos, pheasants, and quail.</p>
+		<p>Never in the original game do two different types of animals see or interact with each other; it's either a deer shooting level or a bonus level. Some of the bonus levels are designed specifically to accommodate one animal (for example, ducks inhabit a level set on a lake) - while other bonus levels are made with repurposed deer-level assets (the turkey shooting bonus level is built out of assets from the 'morning' levels in the south region).</p>
+		<p>All animal behavior in the original Big Buck Hunter conveys fear: deer have animations only for being startled, fleeing, or dying, and they lack even a simple walking animation. The turkeys likewise also only have a running animation and a death animation. The pheasants, quail, and ducks have death and flying animations, but the only time they are seen flying is straight up out of grass/cover - which is how they fly in real life when they are suddenly startled. It's worth noting that the duck level is a full 3d scene of a lake (even with animated water!) - and the ducks (as well as the pheasants and quail) have fully modeled legs that would allow them to swim or walk, but these behaviors are never seen and the legs are never utilized in the original game.</p>
+		<br>
+
+		<div class="generation-gallery">
+    <a href="#" target="_blank">
+      <img src="pheasants_original_game.png" alt="Pheasants in the original game">
+    </a>
+    <a href="#" target="_blank">
+      <img src="ducks_original_game.png" alt="Ducks in the original game">
+    </a>
+    <a href="#" target="_blank">
+      <img src="quail_original_game.png" alt="Quail in the original game">
+    </a>
+        <a href="#" target="_blank">
+      <img src="turkeys_original_game.png" alt="Turkeys in the original game">
+    </a>
+  </div>
+  <i>Above: Pheasants, Ducks, Quail, and Turkeys; how they appear + behave in the original game (its not apparent in the screenshot, but the Turkeys are all running quickly in different directions)</i>
+	<br>
+	<h2>The animals in <i>Big Buck Hunter: Restoration</i></h2>
+	
+	<div class="generation-gallery">
+    <a href="#" target="_blank">
+      <img src="pheasants_restoration.png" alt="Pheasants in BBH: Restoration">
+    </a>
+        <a href="#" target="_blank">
+      <img src="ducks_restoration.png" alt="Ducks in BBH: Restoration">
+    </a>
+        <a href="#" target="_blank">
+      <img src="turkeys_restoration.png" alt="Pheasants in BBH: Restoration">
+    </a>
+  </div>	
+  <i>Above: Pheasants, Ducks, and Turkeys as they appear + behave in Big Buck Hunter: Restoration</i>
+  <br><img src="../buckmeetingturkey.png">
+
+<br>
+	<p>To reflect the unity of creation before the fall, different types of animals now coexist and interact with each other; eliminating the fragmentation present in the original game. Their behaviors and animations have been entirely rewritten to correspond with peace, rest, and lack of death. Ducks can now swim and eat; pheasants and quail now can land, walk, and eat. Their movement corresponds to one another’s positions; just as birds flock in air and on the ground, as opposed to the original game where birds followed predetermined fleeing routes. Additionally, since no female turkey model existed in the original game, the default tom turkey model has been modified to create a hen, since so much turkey behavior I've observed in real life revolves around the toms and their hens. Apart from ducks - who live on water where the other animals can't follow them, all the animals can now walk, eat, and rest in the same landscapes alongside one another. </p>
+
+	<img src="../watchingtom_dithered.gif" width=800px>
+	
+	
+    </div>
+</body>
+</html>

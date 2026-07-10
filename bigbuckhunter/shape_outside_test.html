@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container {
+            width: 600px;
+            font-family: sans-serif;
+            line-height: 1.6;
+        }
+
+        .shaped-image {
+            /* 1. The image must be floated */
+            float: right;
+            
+            width: 640px;
+            height: 480px;
+            
+            /* 2. Point shape-outside to the transparent PNG */
+            shape-outside: url('rest_shape.png');
+            
+            /* 3. Set a threshold for what counts as "transparent" (0.0 is fully transparent) */
+            shape-image-threshold: 0.5;
+            
+            /* 4. Add some breathing room between the image shape and the text */
+            shape-margin: 0px;
+            
+            /* Optional: Just for visual spacing of the image element itself */
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut sapien 
+            eu mi dictum blandit. Cras maximus accumsan nisi, non elementum lorem 
+            consectetur id. Vestibulum ante ipsum primis in faucibus orci luctus et 
+            ultrices posuere cubilia curae; Aliquam at erat id urna sodales elementum. 
+            Phasellus feugiat, elit eget consequat facilisis, magna diam pretium 
+
+
+<img src="rest_shape.png" alt="Shaped Star" class="shaped-image">
+
+        <p>
+            Duis eget dictum eros, vel dictum sem. Interdum et malesuada fames ac 
+            ante ipsum primis in faucibus. Proin non tortor massa. Mauris 
+            sollicitudin nec ipsum eget scelerisque. Vestibulum tempor ante ac 
+            lacus scelerisque, nec rhoncus felis facilisis. Aliquam nec feugiat 
+            massa. Mauris scelerisque maximus tincidunt.
+        </p>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GAN Discriminator</title>
+    
+<style>
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; 
+}
+
+.column {
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+/* widths */
+.three-wide {
+    width: 33.33%;
+}
+
+.four-wide {
+    width: 25%;
+}
+
+.two-wide {
+    width: 50%;
+}
+
+.one-wide {
+    width: 100%;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+</style>
+</head>
+<body>
+<a href="./index.html">&larr; Return to the index page</a>
+
+    <h1>GAN Discriminator Collage</h1>
+
+    <p>
+	Attempt at producing GAN imagery without using the generator;
+
+	Usually when people make art using GANs they throw out the discriminator after training- i really wanted to throw out the generator instead and see what the discriminator knows about the structure of the body. The process is chopping up nude portraits and optimizing the tile placements according to the discriminator from a 16x16 pixel GAN trained on other nude portraits. Later on I tried to do this collaging process with individual brushstrokes/pencilstrokes instead of cropped tiles.
+        </p>
+
+    <p>All images may be clicked to enlarge.</p>
+	
+    <hr>
+	<div class="row">
+	<div class="column one-wide"> 
+	 <a href="./disc_files/disc1.jpg"><img src="./disc_files/disc1.jpg" width="100%"></a>
+	</div>
+	</div>
+	<div class="row">
+	<div class="column two-wide"> 
+	 <a href="./disc_files/disc6.jpg"><img src="./disc_files/disc6.jpg" width="100%"></a>
+	</div>
+	<div class="column two-wide"> 
+	<video loop autoplay muted playsinline width=100%>
+	<source src="disc_files/buildingcollage.mp4" type="video/mp4">
+	Your browser does not support the video tag.
+	</video>    </div>
+	</div>
+	</div>
+	
+	<div class="row">
+	<div class="column four-wide"> 
+	 <a href="./disc_files/disc4.jpg"><img src="./disc_files/disc4.jpg" width="100%"></a>
+	</div>
+	<div class="column four-wide"> 
+	 <a href="./disc_files/disc5.jpg"><img src="./disc_files/disc5.jpg" width="100%"></a>
+	</div>
+		<div class="column four-wide"> 
+	 <a href="./disc_files/disc3.jpg"><img src="./disc_files/disc3.jpg" width="100%"></a>
+	</div>
+	
+			<div class="column four-wide"> 
+	 <a href="./disc_files/disc2.jpg"><img src="./disc_files/disc2.jpg" width="100%"></a>
+	</div>
+	</div>
+	
+	</div>
+	<br>
+	<hr>
+	<div class="row">
+	<div class="column two-wide">
+	<a href="./disc_files/exp4.jpg"><img src="./disc_files/exp4.jpg" width="100%"></a>
+
+	</div>
+		<div class="column two-wide">
+		To the left is an experiment with collaging individual pencilstrokes, and below are some experiments trying to use non-gridded and non-uniform tiles. 
+	</div>
+	</div>
+	
+	<div class="row">
+			<div class="column three-wide">
+			<a href="./disc_files/exp1.jpg"><img src="./disc_files/exp1.jpg" width="100%"></a>
+			</div>
+
+			<div class="column three-wide">
+			<a href="./disc_files/exp2.jpg"><img src="./disc_files/exp2.jpg" width="100%"></a>
+			</div>
+			
+			<div class="column three-wide">
+			<a href="./disc_files/exp3.jpg"><img src="./disc_files/exp3.jpg" width="100%"></a>
+			</div>
+	</div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
