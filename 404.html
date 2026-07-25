@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>404 - Page not Found</title>
+
+    <meta http-equiv="refresh" content="10; url=https://www.robbiebarrat.net/">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrap-container {
+            width: 96%;
+            align: center;
+            display: flow-root;
+        }
+
+        .rest-transparent-img {
+            /* Float LEFT so the empty top-left space receives text */
+            float: right; 
+            width: 100%;
+            height: auto;
+            
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+
+            /* Mask/Shape contour wrapping */
+            shape-outside: url('./404tryout_shape.png');
+            shape-image-threshold: 0.5;
+            shape-margin: 0px;
+        }
+
+        .rest-text {
+            margin: 0;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrap-container">
+    <img src="./404tryout.gif" class="rest-transparent-img" alt="404 Graphic">
+
+    <div class="rest-text">
+        <h1>404 - Not Found</h1>
+        The requested URL was not found on this server.
+        <br><br>
+        Additionally, a 404 Not Found error was encountered while trying to use an ErrorDocument to handle the request.
+        <br><br>
+        We are redirecting you to <a href="https://www.robbiebarrat.net/">www.robbiebarrat.net</a><br>
+        Please click the above link if you are not redirected in 10 seconds.<br><br>
+    </div>
+</div>
+
+</body>
+</html>
