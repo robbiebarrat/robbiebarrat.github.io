@@ -81,6 +81,13 @@
        <priority>0.8000</priority>
   </url>
   <url>
+       <loc>https://www.robbiebarrat.net/archive/index.html</loc>
+       <lastmod>2026-07-18T19:34:39+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.7000</priority>
+  </url>
+  
+  <url>
        <loc>https://www.robbiebarrat.net/balenciaga.html</loc>
        <lastmod>2026-07-18T19:34:39+00:00</lastmod>
        <changefreq>daily</changefreq>
