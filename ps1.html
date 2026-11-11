@@ -40,19 +40,68 @@
       "artMedium": "PlayStation 1 Hardware, PSYQ, CRT Display, Software"
     }
     </script>
+<style>
+		.row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; 
+}
 
-    <style>
-    .column {
-      float: left;
-      width: 33.33%;
-      padding: 5px;
-    }
-    .row::after {
-      content: "";
-      clear: both;
-      display: table;
-    }
-    </style>
+.column {
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+/* widths */
+.three-wide {
+    width: 33.33%;
+}
+
+.four-wide {
+    width: 25%;
+}
+.three-wide {
+    width: 33%;
+}
+.two-wide {
+    width: 50%;
+}
+
+.align-bottom-row > .column {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+}
+
+.align-bottom-row .text-content {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.one-wide {
+    width: 100%;
+}
+
+.spotlight-wide {
+    width: 75%;
+}
+
+.twothirds-wide {
+    width: 66%;
+}
+
+img {
+    display: block;
+    height: auto;
+        width: 100%;
+
+}
+
+.group-img img {
+    height: calc((100vw - 17px) / 6.7334);
+}
+</style>
+    
 </head>
 
 </head>
@@ -65,10 +114,10 @@
 
 	<hr>
 	<div class="row">
-	<div class="column">
+	<div class="column three-wide">
     <img src="ps1_files/tulip0.gif" width=100%>
     </div>
-    <div class="column">
+    <div class="column three-wide">
 	<video loop autoplay muted playsinline width=100%>
 	<source src="ps1_files/tulips_padded.webm" type="video/webm">
 	Your browser does not support the video tag.
@@ -77,10 +126,10 @@
     </div>
     
     	<div class="row">
-	<div class="column">
+	<div class="column three-wide">
     <img src="ps1_files/cosmos0.gif" width=100%>
     </div>
-    	<div class="column">
+    	<div class="column three-wide">
 
     <video loop autoplay muted playsinline width=100%>
 	<source src="ps1_files/cosmos_padded.webm" type="video/webm">
@@ -88,7 +137,62 @@
 	</video>    </div>
     </div>
     <br>
-    <div class="row"><div class="column"><img src="ps1_files/realsetup.gif" width=100%></div><div class="column">Here is one of the sketches running on a real console, it's much slower than running on an emulator, but I think it looks better the slower it is. I'm using a smaller (16 inch diagonal) 16:9 CRT on its side to show these. Until I can make a new case for the tube+chassis, I need to have some magnets around it since there's discoloration when it's placed on its side. I also would really love to RGB mod this screen, hopefully that can happen soon.</div></div>
-    
+    <div class="row">
+			<div class="column three-wide">
+	Here is one of the sketches running on a real console, it's much slower than running on an emulator, 
+	but I think it looks better the slower it is. I'm using a smaller (16 inch diagonal) 16:9 CRT on its side to show these.
+	 Until I can make a new case for the tube+chassis, I need to have some magnets around it since there's discoloration when
+	  it's placed on its side. I also would really love to RGB mod this screen, hopefully that can happen soon.
+	</div>
+	<div class="column three-wide">
+	<img src="ps1_files/realsetup.gif" width=100%>
+	<i>Above: Prototype at my studio <br>Right: Prototype on display at l'Avant Galerie Vossen in Summer 2026 as part of the "Rectangle noir" show</i>
+	</div>
+	<div class="column three-wide">
+	<img src="ps1_files/ps1_avantgalerie.jpg" width=100%>
+	</div>
+	</div>
+	</div>
+	</div>
+	<hr>
+	<div class="row align-bottom-row">
+	<div class="column two-wide">
+	<div class="text-content">
+	<p>More recently (Nov. 2026), I've been trying to include birds/animal behavior in these sketches, to the right is a video of a Mullein / Goldfinch scene that I'm working on right now. It's a rough draft. If you click it, you will be able to hear the sounds that the bird makes.</p>
+	
+	
+	<p>Yesterday I got a PS1 "Link Cable" that allows you to hook two consoles together, originally this was intended for multiplayer games, where you could have people playing on two consoles in the same room in the same match (I think Twisted Metal III supported up to 8 players using this cable and two multitaps). I really want to use this to make diptychs, whether that's two vertical screens that birds can fly between, or a landscape that spans two horizontal screens. </p>
+	
+	<p>The idea for having wooden cases that 'surround' the CRT tube itself has changed a bit, for other non-playstation work I'm pursuing this, but for the playstation I think it's important to keep the image on a TV. I think that the woodworking I will do for the ps1 will just be a wooden 'base' to keep the TVs standing up sideways for scenes that require a vertical display, similar to the wooden scholar stones / viewing stones. <br><br><i>(below: a Lingbi stone and the wooden hongmu stand made to hold it)</i> </p>
+	</div>
+	
+	<img src="ps1_files/viewingstone.jpg" width=100% style="align-items: bottom;">
+	</div>
+
+	<div class="column two-wide">
+	<video id="birdvideo" loop autoplay muted playsinline width=100%>
+	<source src="ps1_files/bird_flying.webm" type="video/webm">
+	Your browser does not support the video tag.
+	</video>
+	<script>
+	const video = document.getElementById('birdvideo');
+
+	video.addEventListener('click', () => {
+    // Unmute the video on click
+    video.muted = false;
+
+    // Optional: Ensure video is playing in case click paused it
+    if (video.paused) {
+      video.play();
+    }
+  });
+</script>
+
+	</div>
+	
+
+	
+	</div>
+	<p></p>
 </body>
 </html>
